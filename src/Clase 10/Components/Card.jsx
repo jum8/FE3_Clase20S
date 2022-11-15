@@ -8,7 +8,10 @@ const Card = ({producto, comprar}) => {
             <h1>{nombre}</h1>
             <h3>{precio}</h3>
             <p>Stock en carrito: {total}</p>
-            <button onClick={() => {comprar(); setTotal(total + 1)}}> Comprar</button>
+            <button onClick={() => {
+                comprar()
+                setTotal(total + 1)
+            }}> Comprar</button>
         </>
     )
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 const Login = () => {
-    const [name, setName] = useState('')
+    const [Name, setName] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(name.length > 3){
+        if(Name.length > 3){
             alert('Bien ahí')
             e.target.reset()
             setName('')
@@ -14,7 +14,7 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-        {name}
+        {Name}
         <label >Nombre</label>
         <input type="text" onChange={(e) => setName(e.target.value)}/> 
         <label >Password</label>

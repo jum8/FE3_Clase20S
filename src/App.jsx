@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import './App.css'
-import Login from './Clase 10/Components/Login'
-import Home from './Clase 10/Pages/Home'
+import ClassComponent from './Clase 13/ClassComponent'
+import FuncComponent from './Clase 13/FuncComponent'
+
 
 const App = () =>  {
-  const [total, setTotal] = useState(0)
 
-  const comprar = () => {
-    // setTotal(prev => prev +1)
-    setTotal(total + 1)
-  }
+  const [toggle, setToggle] = useState(false)
+
   return (
     <>
-      <Login/>
-      <Home comprar={comprar}/>
-      <h1>{total}</h1>
+    {toggle ? <ClassComponent/> :  <FuncComponent/>}
+      <button onClick={() => setToggle(!toggle)}>
+        Cambiar de componente
+      </button>
     </>
   )
 }
