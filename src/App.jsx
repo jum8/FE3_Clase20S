@@ -1,13 +1,12 @@
 import './App.css'
-import AsyncAwait from './Clase 14/AsyncAwait'
-import FetchAxios from './Clase 14/FetchAxios'
+import ComponentePost from './Clase 15/Practicas de la semana/ComponentePost'
+import FetchAxiosPost from './Clase 15/Practicas de la semana/FetchAxiosPost'
 
 const App = () =>  {
 
   return (
     <>
-      {/* <FetchAxios pokemon='charizard'/> */}
-      <AsyncAwait pokemon='charizard'/>
+      <ComponentePost/>
     </>
   )
 }
