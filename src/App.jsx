@@ -1,12 +1,14 @@
+import { useState } from 'react'
 import './App.css'
-import ComponentePost from './Clase 15/Practicas de la semana/ComponentePost'
-import FetchAxiosPost from './Clase 15/Practicas de la semana/FetchAxiosPost'
+import LoboEstepario from './Clase 19/LoboEstepario'
+import ParentComponent from './Clase 19/ParentComponent'
 
 const App = () =>  {
 
   return (
     <>
-      <ComponentePost/>
+      <ParentComponent />
+      <LoboEstepario />
     </>
   )
 }
