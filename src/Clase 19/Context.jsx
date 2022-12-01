@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
 export const EstadosGlobales = createContext()
-console.log(EstadosGlobales)
 
 const Context = ({children}) => {
     const [salario, setSalario] = useState(100000)
