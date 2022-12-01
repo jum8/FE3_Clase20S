@@ -18,22 +18,27 @@ const UserList = () => {
   const handleChange = (e) => {
     setNewUser({
       ...newUser,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.name === 'id' ? parseInt(e.target.value) : e.target.value
     })
   }
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setNewUser({...newUser, id: Math.floor(newUser.id)})
-    dispatch({type: 'ADD_USER', payload: newUser})
+    e.preventDefault();
+    dispatch({type: 'ADD_USER', payload: newUser});
+		e.target.reset();
   }
-  console.log(state)
+	function handleDelete(e) {
+		e.preventDefault();
+		dispatch({type: 'DELETE_USER', payload: newUser});
+	}
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="number" name="id" onChange={handleChange}/>
-        <input type="text" name="userName" onChange={handleChange}/>
-        <input type="text" name="email" onChange={handleChange}/>
+        <input type="number" name="id" onChange={handleChange} placeholder="id"/>
+        <input type="text" name="userName" onChange={handleChange} placeholder="Nombre de usuario"/>
+        <input type="text" name="email" onChange={handleChange} placeholder="e-mail"/>
         <button>Submit</button>
+				<button onClick={handleDelete}>Delete</button>
       </form>
     </div>
   );
